@@ -1,0 +1,34 @@
+
+.dropdown-container {
+    display: none; 
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+  
+
+  .dropdown-list {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+ 
+  .dropdown-item {
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  .show-dropdown .dropdown-container {
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .dropdown-container {
+      display: none; 
+    }
+  }

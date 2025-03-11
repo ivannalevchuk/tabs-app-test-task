@@ -1,0 +1,109 @@
+.tabs-container {
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  overflow: hidden;
+}
+
+.tabs-list {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.tab-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  border-left: 1px solid #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.tab-item.active {
+  background-color: rgb(236, 230, 230);
+  border-top: 2px solid #0078d4;
+}
+
+.tab-item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  flex-grow: 1;
+}
+
+.tab-item img {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.tab-item button {
+  margin-left: 10px;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  color: #888;
+  cursor: pointer;
+  font-size: 12px;
+  transition: color 0.2s;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.tab-item.dragging {
+    background-color: rgba(0, 0, 0, 0.119);
+    cursor: grabbing;
+  }
+.tab-item:hover button {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.tab-item button:hover {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  background-color: red;
+  color: rgb(251, 248, 248);
+}
+
+.tab-item:hover {
+  background-color: #f4f4f4;
+}
+
+.tooltip {
+  position: absolute;
+  top: var(--tooltip-y);
+  left: var(--tooltip-x);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .tabs-list {
+    flex-wrap: wrap;
+  }
+}
+
